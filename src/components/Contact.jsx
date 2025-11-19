@@ -85,7 +85,7 @@ const Contact = () => {
               <li><span className="text-white">Genel WhatsApp (İşletme):</span> <a className="text-brand-300 hover:underline" href={`https://wa.me/${BUSINESS_WHATSAPP}`} target="_blank" rel="noreferrer">+90 552 164 38 55</a></li>
               <li><span className="text-white">Mahmut Sibal (WhatsApp):</span> <a className="text-brand-300 hover:underline" href={`https://wa.me/${BUSINESS_WHATSAPP}`} target="_blank" rel="noreferrer">+90 552 164 38 55</a></li>
               <li><span className="text-white">Yıldız Uçucu (WhatsApp):</span> <a className="text-brand-300 hover:underline" href={`https://wa.me/${BUSINESS_WHATSAPP}`} target="_blank" rel="noreferrer">+90 552 164 38 55</a></li>
-              <li><span className="text-white">Muhammet Öner (Tel):</span> <a className="text-brand-300 hover:underline" href="tel:+905461532118" rel="noreferrer">{MUHAMMET_TEL}</a></li>
+              <li><span className="text-white font-bold text-brand-400">Muhammet Öner (İletişim):</span> <a className="text-white hover:text-brand-300 hover:underline font-medium" href="tel:+905461532118" rel="noreferrer">{MUHAMMET_TEL}</a></li>
               <li><span className="text-white">E-posta:</span> info@yildiztech.com (örnek)</li>
               <li><span className="text-white">LinkedIn:</span> /company/yildiztech</li>
               <li><span className="text-white">GitHub:</span> /yildiztech</li>

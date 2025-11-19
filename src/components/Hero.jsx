@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import logo from '../../Photos/bos.jpg';
 
 const Hero = () => {
@@ -39,8 +40,8 @@ const Hero = () => {
           Yapay zeka destekli yazılım ve güvenilir gömülü sistem çözümleri — hızlı prototipten üretime, uçtan uca teknoloji partneriniz.
         </motion.p>
         <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay:1}} className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-          <motion.a whileHover={{scale:1.03}} whileTap={{scale:0.98}} href="#services" className="px-10 py-4 rounded-xl bg-[#1d7eff] hover:bg-[#166fe6] font-medium shadow-lg shadow-[#1d7eff]/30 text-white transition">Hizmetlerimiz</motion.a>
-          <motion.a whileHover={{scale:1.03}} whileTap={{scale:0.98}} href="#contact" className="px-10 py-4 rounded-xl border border-white/10 hover:border-white/20 font-medium backdrop-blur-md bg-white/5 text-white transition">İletişime Geç</motion.a>
+          <Link to="/services" className="px-10 py-4 rounded-xl bg-[#1d7eff] hover:bg-[#166fe6] font-medium shadow-lg shadow-[#1d7eff]/30 text-white transition transform hover:scale-105 active:scale-95 text-center">Hizmetlerimiz</Link>
+          <Link to="/contact" className="px-10 py-4 rounded-xl border border-white/10 hover:border-white/20 font-medium backdrop-blur-md bg-white/5 text-white transition transform hover:scale-105 active:scale-95 text-center">İletişime Geç</Link>
         </motion.div>
       </div>
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-brand-300"> 

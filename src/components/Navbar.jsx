@@ -32,16 +32,16 @@ const Navbar = () => {
             {lang.toUpperCase()}
           </button>
         </div>
-        <button className="md:hidden relative w-9 h-9 flex flex-col justify-center gap-1.5" onClick={()=>setOpen(o=>!o)} aria-label="Menu">
-          <span className={`h-0.5 bg-white transition ${open?'rotate-45 translate-y-2':''}`}></span>
-          <span className={`h-0.5 bg-white transition ${open?'opacity-0':''}`}></span>
-            <span className={`h-0.5 bg-white transition ${open?' -rotate-45 -translate-y-2':''}`}></span>
+        <button className="md:hidden relative w-10 h-10 flex flex-col justify-center gap-1.5 p-2 rounded-md bg-white/5 border border-white/10" onClick={()=>setOpen(o=>!o)} aria-label="Menu">
+          <span className={`h-0.5 w-full bg-white transition ${open?'rotate-45 translate-y-2':''}`}></span>
+          <span className={`h-0.5 w-full bg-white transition ${open?'opacity-0':''}`}></span>
+            <span className={`h-0.5 w-full bg-white transition ${open?' -rotate-45 -translate-y-2':''}`}></span>
         </button>
       </div>
       <AnimatePresence>
         {open && (
-          <motion.div initial={{height:0, opacity:0}} animate={{height:'auto', opacity:1}} exit={{height:0, opacity:0}} className="md:hidden px-6 pb-6 flex flex-col gap-4 text-sm">
-            {links.map(l=> <Link onClick={()=>setOpen(false)} key={l.to} to={l.to} className="text-gray-300 hover:text-white transition">{l.label}</Link>)}
+          <motion.div initial={{height:0, opacity:0}} animate={{height:'auto', opacity:1}} exit={{height:0, opacity:0}} className="md:hidden px-6 pb-6 flex flex-col gap-4 text-sm bg-gray-950/95 border-b border-white/10">
+            {links.map(l=> <Link onClick={()=>setOpen(false)} key={l.to} to={l.to} className="text-gray-300 hover:text-white transition py-2 border-b border-white/5">{l.label}</Link>)}
             <button onClick={()=> { setLang(lang==='tr'?'en':'tr'); setOpen(false); }} className="px-3 py-1.5 rounded border border-white/10 bg-white/5 text-xs w-max">{lang.toUpperCase()}</button>
             <a href="https://wa.me/905521643855" target="_blank" rel="noreferrer" onClick={()=>setOpen(false)} className="px-4 py-2 rounded-lg bg-green-500 hover:bg-green-400 text-white font-medium text-xs w-max">WhatsApp</a>
           </motion.div>
