@@ -1,0 +1,61 @@
+# Workflow'a bir isim verelim
+name: Deploy Vite site to GitHub Pages
+
+# Bu workflow'un ne zaman çalışacağını belirler
+on:
+  # Sadece "main" branch'ine push yapıldığında tetiklenir
+  push:
+    branches: ["main"]
+  # GitHub arayüzünden manuel olarak çalıştırmaya izin verir
+  workflow_dispatch:
+
+# Deploy işleminin başarılı olması için gerekli izinler
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  # Derleme (build) işlemi
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Adım: Proje dosyalarını runner'a kopyalar
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 2. Adım: Node.js'i kurar ve npm paketlerini cache'ler (daha hızlı çalışması için)
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      # 3. Adım: Gerekli paketleri package-lock.json'a göre kurar (CI için daha güvenilir)
+      - name: Install dependencies
+        run: npm ci
+
+      # 4. Adım: Projeyi derler (build alır)
+      - name: Build
+        run: npm run build
+
+      # 5. Adım: Derlenen dosyaları (dist klasörünü) bir artifact olarak yükler
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+  # Dağıtım (deploy) işlemi
+  deploy:
+    # Dağıtım ortamını ve URL'sini ayarlar
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    # Build işlemi bittikten sonra çalışır
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Adım: Yüklenen artifact'i GitHub Pages'e dağıtır
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
