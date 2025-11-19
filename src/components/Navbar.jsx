@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useI18n } from '../i18n/i18n';
+import logo from '../../Photos/bos.jpg';
 
 const makeLinks = (t) => ([
   { to: '/', label: t('home') },
@@ -21,7 +22,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 w-full z-40 backdrop-blur-xl bg-gray-950/70 border-b border-white/5">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 h-16">
         <Link to="/" onClick={()=>setOpen(false)} className="flex items-center gap-3 md:gap-4 font-semibold tracking-wide py-1">
-          <img src="bos.jpg" alt="Logo" className="w-12 h-12 md:w-14 md:h-14 object-contain" />
+          <img src={logo} alt="Logo" className="w-12 h-12 md:w-14 md:h-14 object-contain" />
           <span className="gradient-text text-xl md:text-2xl">YildizTech</span>
         </Link>
         <div className="hidden md:flex items-center gap-8 text-sm">

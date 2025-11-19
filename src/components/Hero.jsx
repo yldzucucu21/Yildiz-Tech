@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import logo from '../../Photos/bos.jpg';
 
 const Hero = () => {
   return (
@@ -27,7 +28,7 @@ const Hero = () => {
           initial={{opacity:0, y:-20}}
           animate={{opacity:1, y:0}}
           transition={{delay:0.2}}
-          src="bos.jpg"
+          src={logo}
           alt="YildizTech Logo"
           className="mx-auto mb-4 w-28 h-28 md:w-36 md:h-36 object-contain"
         />
