@@ -24,7 +24,7 @@ const Contact = () => {
       // fallback: Gmail compose
       const subject = encodeURIComponent('Web sitesi iletişim formu');
       const body = encodeURIComponent(`Ad: ${name}\nE-posta: ${email}\n\nMesaj:\n${message}`);
-      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=info@yildiztech.com&su=${subject}&body=${body}`;
+      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=info.yildiztech@gmail.com&su=${subject}&body=${body}`;
       window.open(gmailUrl, '_blank', 'noopener,noreferrer');
       return;
     }
@@ -86,7 +86,7 @@ const Contact = () => {
               <li><span className="text-white">Mahmut Sibal (WhatsApp):</span> <a className="text-brand-300 hover:underline" href="https://api.whatsapp.com/send?phone=905368983855" target="_blank" rel="noreferrer">+90 536 898 38 55</a></li>
               <li><span className="text-white">Yıldız Uçucu (WhatsApp):</span> <a className="text-brand-300 hover:underline" href="https://api.whatsapp.com/send?phone=905353097436" target="_blank" rel="noreferrer">+90 535 309 74 36</a></li>
               <li><span className="text-white">Muhammet Öner (WhatsApp):</span> <a className="text-brand-300 hover:underline" href="https://api.whatsapp.com/send?phone=905461532118" target="_blank" rel="noreferrer">+90 546 153 21 18</a></li>
-              <li><span className="text-white">E-posta:</span> info@yildiztech.com (örnek)</li>
+              <li><span className="text-white">E-posta:</span> info.yildiztech@gmail.com (örnek)</li>
               <li><span className="text-white">LinkedIn:</span> /company/yildiztech</li>
               <li><span className="text-white">GitHub:</span> /yildiztech</li>
             </ul>
